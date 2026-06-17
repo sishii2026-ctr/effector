@@ -7,13 +7,13 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 - エフェクト OFF
 
 <audio controls>
-  <source src="clean.m4a" type="audio/mp4">
+  <source src="https://raw.githubusercontent.com/ユーザー名/リポジトリ名/main/distortion_off.m4a" type="audio/mp4">
 </audio>
 
 - エフェクト ON
 
 <audio controls>
-  <source src="distortion.m4a" type="audio/mp4">
+  <source src="https://raw.githubusercontent.com/ユーザー名/リポジトリ名/main/distortion_on.m4a" type="audio/mp4">
 </audio>
 
 ## 主な機能
