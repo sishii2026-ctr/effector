@@ -48,35 +48,33 @@ FspTimer audioTimer;
 void audioISR(timer_callback_args_t *args) {
   int raw = analogRead(ADC_IN);
 
-  if (bitMode) {
-    static float smoothed = DC_BIAS;
-    smoothed = smoothed * 0.6f + raw * 0.4f;
-    raw = (int)smoothed;
-
-    static int holdVal = DC_BIAS;
-    static int holdCount = 0;
-    if (holdCount++ >= 2) {
-      holdVal = raw;
-      holdCount = 0;
-    }
-    raw = holdVal;
-  }
-
   int POT = potVal;
   int out = DC_BIAS;
 
   if (effectOn) {
     if (bitMode) {
-      // BITモード：クリッピングなし
-      int centered  = raw - DC_BIAS;
+      // BITモード：ノイズ対策＋ビット化
+      static float smoothed = DC_BIAS;
+      smoothed = smoothed * 0.6f + raw * 0.4f;
+      int smoothedRaw = (int)smoothed;
+
+      static int holdVal = DC_BIAS;
+      static int holdCount = 0;
+      if (holdCount++ >= 6) {
+        holdVal = smoothedRaw;
+        holdCount = 0;
+      }
+
+      int centered  = holdVal - DC_BIAS;
       int amplified = centered * 10;
       out = constrain(amplified + DC_BIAS, 0, 4095);
+      raw = holdVal;
     } else {
-      // DISTモード
+      // DISTモード：ファイル内コード通り
       float distortion = map(POT, 0, 4095, 1, 100);
       int   centered   = raw - DC_BIAS;
       float amp        = centered * distortion;
-      float clipped    = constrain(amp, -500, 500);
+      float clipped    = constrain(amp, -2000, 2000);
       out = constrain((int)clipped + DC_BIAS, 0, 4095);
     }
   } else {
