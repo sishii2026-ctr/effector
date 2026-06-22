@@ -48,35 +48,29 @@ FspTimer audioTimer;
 void audioISR(timer_callback_args_t *args) {
   int raw = analogRead(ADC_IN);
 
+  if (bitMode) {
+    static float smoothed = DC_BIAS;
+    smoothed = smoothed * 0.6f + raw * 0.4f;
+    raw = (int)smoothed;
+
+    static int holdVal = DC_BIAS;
+    static int holdCount = 0;
+    if (holdCount++ >= 8) {
+      holdVal = raw;
+      holdCount = 0;
+    }
+    raw = holdVal;
+  }
+
   int POT = potVal;
   int out = DC_BIAS;
 
   if (effectOn) {
-    if (bitMode) {
-      // BITモード：ノイズ対策＋ビット化
-      static float smoothed = DC_BIAS;
-      smoothed = smoothed * 0.6f + raw * 0.4f;
-      int smoothedRaw = (int)smoothed;
-
-      static int holdVal = DC_BIAS;
-      static int holdCount = 0;
-      if (holdCount++ >= 6) {
-        holdVal = smoothedRaw;
-        holdCount = 0;
-      }
-
-      int centered  = holdVal - DC_BIAS;
-      int amplified = centered * 10;
-      out = constrain(amplified + DC_BIAS, 0, 4095);
-      raw = holdVal;
-    } else {
-      // DISTモード：ファイル内コード通り
-      float distortion = map(POT, 0, 4095, 1, 100);
-      int   centered   = raw - DC_BIAS;
-      float amp        = centered * distortion;
-      float clipped    = constrain(amp, -2000, 2000);
-      out = constrain((int)clipped + DC_BIAS, 0, 4095);
-    }
+    float distortion = map(POT, 0, 4095, 1, 100);
+    int   centered   = raw - DC_BIAS;
+    float amp        = centered * distortion;
+    float clipped    = constrain(amp, -2000, 2000);
+    out = constrain((int)clipped + DC_BIAS, 0, 4095);
   } else {
     int centered  = raw - DC_BIAS;
     int amplified = centered * 10;
@@ -194,20 +188,20 @@ void loop() {
 
     // ── 中段：レベルメーター ──
     display.setTextSize(1);
-    display.setCursor(0, 20);
+    display.setCursor(98, 8);
     display.print("LEVEL");
-    display.drawRect(0, 28, 128, 8, SSD1306_WHITE);
+    display.drawRect(0, 16, 128, 8, SSD1306_WHITE);
     if (barWidth > 0) {
-      display.fillRect(2, 30, barWidth, 4, SSD1306_WHITE);
+      display.fillRect(2, 18, barWidth, 4, SSD1306_WHITE);
     }
 
     // ── 下段：スペクトラム ──
     display.setTextSize(1);
-    display.setCursor(0, 38);
+    display.setCursor(0, 26);
     display.print("SPECTRUM");
 
-    int barAreaTop    = 47;
-    int barAreaHeight = 16;
+    int barAreaTop    = 34;
+    int barAreaHeight = 28;
     int bandWidth     = 128 / FFT_BANDS;
 
     for (int b = 0; b < FFT_BANDS; b++) {
