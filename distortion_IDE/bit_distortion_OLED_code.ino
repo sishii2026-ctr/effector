@@ -16,7 +16,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 ArduinoFFT<float> FFT;
 
 const int DAC_OUT  = A0;
-const int ADC_IN   = A1;
+const int ADC_IN   = A3;
 const int POT_PIN  = A2;
 const int BTN_PIN  = 13;  // エフェクトON/OFF
 const int BTN_PIN2 = 12;  // エフェクト切り替え
