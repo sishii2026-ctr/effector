@@ -6,11 +6,15 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 
 ### エフェクト OFF
 
-[▶ クリーン音声を再生](https://github.com/sishii2026-ctr/effector/raw/main/clean.m4a)
+▶ クリーン音声を再生
+
+<audio controls src="clean-1.mp3" title="Title"></audio>
 
 ### エフェクト ON
 
-[▶ ディストーション音声を再生](https://github.com/sishii2026-ctr/effector/raw/main/distortion.m4a)
+▶ ディストーション音声を再生：音量注意
+
+<audio controls src="distortion-1.mp3" title="Title"></audio>
 
 ## 主な機能
 
@@ -32,7 +36,7 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 ![alt text](IMG_1740.png)
 ![alt text](IMG_1741.png)
 
-### 表示機能
+### 表示内容
 
 - ボタン1でDIST/BITのエフェクト切り替えを表示
 - ボタン2でエフェクトのON/OFFの切り替えを表示
