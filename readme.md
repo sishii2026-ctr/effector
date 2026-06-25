@@ -6,15 +6,15 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 
 ### エフェクト OFF
 
-▶ クリーン音声を再生
+[▶ クリーン音声を再生](clean-1.mp3)
 
-<audio controls src="clean-1.mp3" title="Title"></audio>
+<audio controls src="clean-1-1.mp3" title="Title"></audio>
 
 ### エフェクト ON
 
-▶ ディストーション音声を再生：音量注意
+[▶ ディストーション音声を再生：音量注意](distortion-1.mp3)
 
-<audio controls src="distortion-1.mp3" title="Title"></audio>
+<audio controls src="distortion-1-2.mp3" title="Title"></audio>
 
 ## 主な機能
 
