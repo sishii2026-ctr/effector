@@ -54,8 +54,8 @@ Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクタ�
 graph TD;
     A([ADC入力 A3]) --> B{effectOn?\nボタン1でON/OFF}
 
-    B -- NO --> C[クリーン出力\n×10増幅 + clamp]
-    B -- YES --> D{bitMode?\nボタン2でDIST/BIT切替}
+    B -- OFF --> C[クリーン出力\n×10増幅 + clamp]
+    B -- ON --> D{bitMode?\nボタン2でDIST/BIT切替}
 
     D -- DIST --> E[DISTモード\npotVal→歪み量\nclamp ±2000]
     D -- BIT --> F[BITモード\nスムージング + ホールド\n×10増幅 + clamp]
@@ -64,8 +64,8 @@ graph TD;
     E --> G
     F --> G
 
-    G -- NO --> H([DAC出力 A0])
-    G -- YES --> I[トレモロ処理\nsinf lfoPhase で音量変調\ndepth=0.7 / potTrm→速度]
+    G -- OFF --> H([DAC出力 A0])
+    G -- ON --> I[トレモロ処理\nsinf lfoPhase で音量変調\ndepth=0.7 / potTrm→速度]
     I --> H
 ```
 
@@ -73,6 +73,8 @@ graph TD;
 
 ![alt text](picture/IMG_1740.png)
 ![alt text](picture/IMG_1741.png)
+
+<video controls src="movie&sound/IMG_1744.mp4" title="Title"></video>
 
 #### 表示内容
 
@@ -83,3 +85,44 @@ graph TD;
 - ポテンションメータ2を使用するとSPDの値が増減
 - 音量が上がるとレベルメーターが伸びる
 - 音声入力をFFTで周波数分析し、16バンドのスペクトラムをリアルタイム表示
+
+## エフェクトのデモ映像
+
+### エフェクト：OFF | トレモロ：OFF
+
+
+
+### エフェクト：DIST | トレモロ：OFF
+
+
+
+### エフェクト：DIST | トレモロ：ON
+
+
+
+### エフェクト：BIT | トレモロ：OFF
+
+
+
+### エフェクト：BIT | トレモロ：ON
+
+
+
+## ソフトウェア
+
+### 標準ライブラリ
+
+- Wire.h — I2C通信
+- math.h — sinf()、M_PIなど数学関数
+
+### 追加ライブラリ
+
+- Adafruit_GFX.h — ディスプレイ用グラフィックス基底ライブラリ
+- Adafruit_SSD1306.h — SSD1306 OLEDディスプレイドライバ
+- FspTimer.h — RA4M1チップの高精度タイマー制御（割り込み）
+- arduinoFFT.h — 高速フーリエ変換（スペクトラム表示用）※v2.x系必須
+
+## 参考サイト
+
+- Claude
+- [音楽用エフェクター設計に役立つ回路集](https://xs990050.xsrv.jp/effector/etc/circuits/circuits.php)
