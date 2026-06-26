@@ -44,14 +44,14 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 
 ### 配線図
 
-![alt text](<スクリーンショット 2026-06-25 115313.png>)
+![alt text](<picture/スクリーンショット 2026-06-25 115313.png>)
 
-![alt text](IMG_1743.jpg)
+![alt text](picture/IMG_1743.jpg)
 
 ### OLED
 
-![alt text](IMG_1740.png)
-![alt text](IMG_1741.png)
+![alt text](picture/IMG_1740.png)
+![alt text](picture/IMG_1741.png)
 
 ### 表示内容
 
