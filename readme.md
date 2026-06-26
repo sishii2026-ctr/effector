@@ -74,7 +74,7 @@ graph TD;
 ![alt text](picture/IMG_1740.png)
 ![alt text](picture/IMG_1741.png)
 
-<video controls src="movie&sound/IMG_1744.mp4" title="Title"></video>
+https://github.com/user-attachments/assets/77500b7e-669f-4713-81d7-794079ee29de
 
 #### 表示内容
 
