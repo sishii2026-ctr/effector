@@ -2,7 +2,7 @@
 
 ## 概要
 
-Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
+Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクター制作
 
 ### エフェクト OFF
 
@@ -48,12 +48,33 @@ Arduino UNO R4 Wifiを用いた、エレキギターのエフェクター制作
 
 ![alt text](picture/IMG_1743.jpg)
 
-### OLED
+### 簡単なフローチャート
+
+``` mermaid
+graph TD;
+    A([ADC入力 A3]) --> B{effectOn?\nボタン1でON/OFF}
+
+    B -- NO --> C[クリーン出力\n×10増幅 + clamp]
+    B -- YES --> D{bitMode?\nボタン2でDIST/BIT切替}
+
+    D -- DIST --> E[DISTモード\npotVal→歪み量\nclamp ±2000]
+    D -- BIT --> F[BITモード\nスムージング + ホールド\n×10増幅 + clamp]
+
+    C --> G{tremoloOn?\nボタン3でON/OFF}
+    E --> G
+    F --> G
+
+    G -- NO --> H([DAC出力 A0])
+    G -- YES --> I[トレモロ処理\nsinf lfoPhase で音量変調\ndepth=0.7 / potTrm→速度]
+    I --> H
+```
+
+### OLEDの表示について
 
 ![alt text](picture/IMG_1740.png)
 ![alt text](picture/IMG_1741.png)
 
-### 表示内容
+#### 表示内容
 
 - ボタン1でDIST/BITのエフェクト切り替えを表示
 - ボタン2でエフェクトのON/OFFの切り替えを表示
