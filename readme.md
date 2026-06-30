@@ -88,9 +88,7 @@ https://github.com/user-attachments/assets/77500b7e-669f-4713-81d7-794079ee29de
 
 ### Webサイトの表示と操作について
 
-![alt text](picture/IMG_1750.png)
-![alt text](picture/IMG_1751.png)
-![alt text](picture/IMG_1752.png)
+https://github.com/user-attachments/assets/5a5958d6-1df3-4569-b857-d2d97f1ba7ac
 
 - 操作モード：クリックによってエフェクトが操作できる
 - プリセットモード：現在のエフェクトの保存、呼び出しができる
