@@ -98,22 +98,23 @@ https://github.com/user-attachments/assets/5a5958d6-1df3-4569-b857-d2d97f1ba7ac
 
 ### エフェクト：OFF | トレモロ：OFF
 
-
+https://github.com/user-attachments/assets/4f64bd10-a963-434a-b759-07e373d1536b
 
 ### エフェクト：DIST | トレモロ：OFF
 
-
+https://github.com/user-attachments/assets/49938672-ceab-4d99-b9e4-31efc051a8b6
 
 ### エフェクト：DIST | トレモロ：ON
 
-
+https://github.com/user-attachments/assets/9d42fd63-4694-455f-bf32-313f81b13449
 
 ### エフェクト：BIT | トレモロ：OFF
 
-
+https://github.com/user-attachments/assets/e652b76a-b20f-4a3e-9a72-bca1a967dc92
 
 ### エフェクト：BIT | トレモロ：ON
 
+https://github.com/user-attachments/assets/8b2b93d4-f295-447f-923e-5ce478550a49
 
 
 ## ソフトウェア
