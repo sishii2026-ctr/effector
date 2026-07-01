@@ -123,6 +123,7 @@ https://github.com/user-attachments/assets/8b2b93d4-f295-447f-923e-5ce478550a49
 
 - Wire.h — I2C通信
 - math.h — sinf()、M_PIなど数学関数
+- EEPROM.h — 不揮発性メモリへの読み書き（プリセット5件の保存・読込用）
 
 ### 追加ライブラリ
 
@@ -130,6 +131,11 @@ https://github.com/user-attachments/assets/8b2b93d4-f295-447f-923e-5ce478550a49
 - Adafruit_SSD1306.h — SSD1306 OLEDディスプレイドライバ
 - FspTimer.h — RA4M1チップの高精度タイマー制御（割り込み）
 - arduinoFFT.h — 高速フーリエ変換（スペクトラム表示用）※v2.x系必須
+- WiFiS3.h — Arduino UNO R4 WiFi用Wi-Fi通信ライブラリ（ボードパッケージに同梱、追加インストール不要）
+
+### 自作ヘッダーファイル
+
+- mywifi.h — Wi-Fi接続情報（WIFI_SSID, WIFI_PASS）を定義する自作ファイル。ソースコードには含まれないため、各自で作成しスケッチと同じフォルダに配置する必要がある
 
 ## 参考サイト
 
