@@ -44,7 +44,7 @@ Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクタ�
 
 ### 配線図
 
-![alt text](<picture/スクリーンショット 2026-06-25 115313.png>)
+![alt text](picture/スクリーンショット%202026-07-02%20100830.png)
 
 ![alt text](picture/IMG_1743.jpg)
 
