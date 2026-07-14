@@ -8,11 +8,15 @@ Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクタ�
 
 [▶ クリーン音声を再生](movie&sound/clean-1.mp3)
 
+https://github.com/user-attachments/assets/4f64bd10-a963-434a-b759-07e373d1536b
+
 <audio controls src="movie&sound/clean-1.mp3" title="Title"></audio>
 
 ### エフェクト ON
 
 [▶ ディストーション音声を再生：音量注意](movie&sound/distortion-1.mp3)
+
+https://github.com/user-attachments/assets/49938672-ceab-4d99-b9e4-31efc051a8b6
 
 <audio controls src="movie&sound/distortion-1.mp3" title="Title"></audio>
 
