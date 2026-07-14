@@ -8,13 +8,13 @@ Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクタ�
 
 [▶ クリーン音声を再生](movie&sound/clean-1.mp3)
 
-<audio controls src="clean-1.mp3" title="Title"></audio>
+<audio controls src="movie&sound/clean-1.mp3" title="Title"></audio>
 
 ### エフェクト ON
 
 [▶ ディストーション音声を再生：音量注意](movie&sound/distortion-1.mp3)
 
-<audio controls src="distortion-1.mp3" title="Title"></audio>
+<audio controls src="movie&sound/distortion-1.mp3" title="Title"></audio>
 
 ## 主な機能
 
@@ -24,6 +24,7 @@ Arduino UNO R4 Wifiを用いた、エレキギターの多機能エフェクタ�
 - ボタンによるエフェクトのON/OFF、切り替え
 - ポテンションメータによる歪み量の増減、トレモロの速さの変更
 - OLEDディスプレイの現在のエフェクトの表示、レベルメーターの表示、スペクトラム表示
+- Webを使ったエフェクトの表示、操作
 
 ### エフェクト機能の詳細
 
