@@ -264,6 +264,7 @@ void audioISR(timer_callback_args_t *args) {
       float amp        = centered * distortion;
       float clipped    = constrain(amp, -2000, 2000);
       out = constrain((int)clipped + DC_BIAS, 0, 4095);
+
     } else {
       static float smoothed = DC_BIAS;
       smoothed = smoothed * 0.6f + raw * 0.4f;
